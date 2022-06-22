@@ -26,7 +26,7 @@ for more -  [Gnosis](https://docs.gnosis.io/conditionaltokens/)
 [Will Elon Musk step down as CEO of Tesla on or before December 31, 2020?](hhttps://docs.gnosis.io/conditionaltokens/docs/introduction1/)
 [Will the share price of Tesla stock be LESS THAN $300 at market close, December 31, 2020?](hhttps://docs.gnosis.io/conditionaltokens/docs/introduction1/)
 
-![alt text](http://url/to/img.png)
+![alt text](./img.png)
 
 ---
 ## Project Structure 
