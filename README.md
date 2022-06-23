@@ -1,5 +1,3 @@
-# Gnosis-Conditional-Token-POC
-
 
 
 ## What are Prediction Markets?
@@ -34,6 +32,7 @@ for more -  [Gnosis](https://docs.gnosis.io/conditionaltokens/)
 - CTHelpers.sol 
 - ConditionalTokens.sol
 - MyBet.sol
+- CSAMM.sol
 - Token.sol
 
 ---
@@ -161,7 +160,50 @@ function onERC1155Received(
 
 Methor used to redeem the tokens from CT contract.
 
-## 4. MyBet.sol
+## 4.CSAMM.sol
+
+What is Constant Sum Automated Market Maker?
+
+This design simply replaces the multiplication in Constant Product with addition (x + y = z). Liquidity in the pool equals the total value of Asset A plus the total value of Asset B.
+
+![alt text](./img1.png)
+
+```sh
+constructor(address _token0, address _token1)
+```
+Both Token address needs to be supplied to contract.
+
+```sh
+function _mint(address _to, uint _amount)
+```
+Used to mint tokens for any user into CSAMM contract.
+
+```sh
+function _burn(address _from, uint _amount)
+```
+Used to burn the tokens for any user from CSAMM contract.
+
+```sh
+function _update(uint _res0,uint _res1) 
+```
+To update the liquidity pool of CSAMM contract.
+```sh
+function swap(address _tokenIn,uint _amountIn)
+```
+Used to swapn Token1 with Token2 ,swapping is done according to the Token2 reserve currently present in the contract using this formula (x + y = z).
+
+```sh
+function addLiquidity(uint amount0, uint amount1)
+```
+Used to add Tokens inside liquidity pool by any user.
+
+```sh
+function removeLiquidity(uint _shares)
+```
+Used to remove liquidity from liquidity pool.
+
+---
+## 5. MyBet.sol
 __State variables :__
 ```sh
 ks = for storing ERC token
